@@ -1,0 +1,14 @@
+<router-outlet></router-outlet>
+
+<div *ngIf="showIntro">
+  <app-intro></app-intro>
+</div>
+
+<div *ngIf="!showIntro">
+  <section class="banner-section">
+    <app-banner></app-banner>
+  </section>
+  <section class="finder-section">
+    <app-finder></app-finder>
+  </section>
+</div>

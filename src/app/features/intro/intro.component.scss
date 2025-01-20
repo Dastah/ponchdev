@@ -1,0 +1,44 @@
+section {
+  cursor: context-menu;
+  display: grid;
+  place-items: center;
+  height: 96vh;
+}
+
+.intro-text {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.intro-div {
+  width: 100%;
+  place-items: center;
+  animation: disappear 2s ease-in-out forwards;
+}
+
+.gradient {
+  display: inline-block;
+  background-image: linear-gradient(45deg, #fd4059, #9966ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

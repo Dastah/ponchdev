@@ -1,0 +1,55 @@
+export const stack = [
+  {
+    title: 'High level',
+    items: [
+      { name: 'TypeScript', img: 'ico/ts.png' },
+      { name: 'Angular', img: 'ico/angular.png' },
+      { name: 'HTML', img: 'ico/html.png' },
+      { name: 'SASS', img: 'ico/sass.png' },
+      { name: 'CSS', img: 'ico/css.png' },
+      { name: 'Bootstrap', img: 'ico/bootstrap.png' },
+      { name: 'GitFlow', img: 'ico/github.png' },
+      { name: 'Jenkins', img: 'ico/jenkins.png' },
+      { name: 'Jira', img: 'ico/jira.png' },
+      { name: 'Sonar', img: 'ico/sonar.png' },
+      { name: 'Postman', img: 'ico/postman.png' },
+      { name: 'Confluence', img: 'ico/confluence.png' },
+      { name: 'Agile', img: 'ico/agile.png' },
+    ],
+  },
+  {
+    title: 'Mid level',
+    items: [
+      { name: 'JavaScript', img: 'ico/javascript.png' },
+      { name: 'JQuery', img: 'ico/jquery.png' },
+      { name: 'Java', img: 'ico/java.png' },
+      { name: 'SQL', img: 'ico/sql.png' },
+      { name: 'XML', img: 'ico/xml.png' },
+      { name: 'JSP', img: 'ico/jsp.png' },
+      { name: 'Subversion', img: 'ico/svn.png' },
+      { name: 'Redmine', img: 'ico/redmine.png' },
+      { name: 'Kibana', img: 'ico/kibana.png' },
+      { name: 'Clarive', img: 'ico/clarive.webp' },
+    ],
+  },
+  {
+    title: 'Low level',
+    items: [
+      { name: 'PHP', img: 'ico/php.png' },
+      { name: 'C Sharp', img: 'ico/csharp.png' },
+      { name: 'SAP UI5', img: 'ico/sap.png' },
+      { name: 'Docker', img: 'ico/docker.png' },
+    ],
+  },
+  {
+    title: 'Other skills',
+    items: [
+      { name: 'Adobe Photoshop', img: 'ico/photoshop.png' },
+      { name: 'Adobe Illustrator', img: 'ico/illustrator.png' },
+      { name: 'Adobe Lightroom', img: 'ico/lightroom.png' },
+      { name: 'Adobe Premiere CC', img: 'ico/premiere.png' },
+      { name: 'English (C1 in process)', img: 'ico/english.png' },
+      { name: 'Spanish (Native)', img: 'ico/spain.png' },
+    ],
+  },
+];

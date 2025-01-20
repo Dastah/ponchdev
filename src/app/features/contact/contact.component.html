@@ -1,0 +1,48 @@
+<div *ngIf="show" class="contact-section">
+    <div class="contact-container">
+        <form #contactForm="ngForm" (submit)="sendForm($event)" novalidate>
+            <h1>Let's get in touch!</h1>
+            <p class="cv-info"><i>Send this form to download my CV</i></p>
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="firstname" placeholder="Your name.."
+                        [(ngModel)]="formData.firstname" #fname="ngModel" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="mail">Email</label>
+                </div>
+                <div class="col-75">
+                    <input type="email" id="mail" name="email" placeholder="Your email.." [(ngModel)]="formData.email"
+                        #mail="ngModel" required email>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject" name="subject" placeholder="Write something.." [(ngModel)]="formData.subject"
+                        #subject="ngModel" required style="height:200px"></textarea>
+                </div>
+            </div>
+            <div *ngIf="!sending && !sent" class="row row-button">
+                <button [disabled]="contactForm.invalid" type="submit">Send</button>
+            </div>
+            <div *ngIf="sending" class="container">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div *ngIf="sent && !sending">
+                <img class="checkmark" src="check.webp" alt="">
+            </div>
+        </form>
+
+    </div>
+</div>

@@ -1,0 +1,88 @@
+$blue: #00d9ff;
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: intro 1s forwards;
+}
+
+.card {
+  justify-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px 0px #ffffff4f;
+  background-color: rgb(0 0 0 / 38%);
+  padding: 1.5rem;
+  padding-inline: 34px;
+  width: 255px;
+  max-width: 255px;
+  min-width: 255px;
+  height: 580px;
+  font-weight: 500;
+  color: #fff;
+  cursor: context-menu;
+  transition: 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 20px 0px $blue;
+  transition: 0.2s;
+}
+
+.ico {
+  width: 20px;
+  padding-right: 5px;
+}
+.ico.contrast {
+  filter: contrast(0);
+}
+
+.skills {
+  padding-top: 1px;
+}
+
+p {
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  color: $blue;
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 992px) {
+  .card {
+    justify-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px 0px #ffffff4f;
+    background-color: rgb(0 0 0 / 38%);
+    padding: 1.5rem;
+    padding-inline: 34px;
+    width: 100%;
+    max-width: 70%;
+    height: 100%;
+    font-weight: 500;
+    color: #fff;
+    cursor: context-menu;
+    transition: 0.2s;
+  }
+  p {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+  }
+}

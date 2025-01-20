@@ -1,0 +1,24 @@
+<div *ngIf="show" class="container-aboutme">
+  <img class="aboutmepic" src="profile.webp" />
+  <div class="text-container">
+    <p class="text-p">
+      Based in Barcelona, I’m {{ age }} years old with <b class="shine">{{ experience }} years</b> of
+      experience creating dynamic, functional, and visually appealing web
+      interfaces.
+      <br />
+      <br />
+      Throughout my career, I’ve worked on projects ranging from complex
+      enterprise applications to seamless user experiences, always focusing on
+      writing clean and scalable code.
+      <br />
+      <br />
+      If you’re looking for a dedicated developer passionate about delivering
+      high-quality solutions, I’m here to help,
+      <b
+      (click)="goContact('alfonsomlwork@gmail.com', 'Lets talk!', '')"
+        class="contact-aboutme"
+        >contact me!
+      </b>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div *ngIf="show" class="project-section">
+  <div class="container-projects">
+    <button *ngIf="!isSmallScreen" class="slider-btn next-btn" (click)="nextProject()">
+      <div class="arrow">
+        <div class="arrow-top"></div>
+        <div class="arrow-bottom"></div>
+      </div>
+    </button>
+    <div (click)="nextProject()" *ngIf="currentProject" class="cards-container" #cardsContainer>
+      <div class="card">
+        <h2 class="project-title">{{ currentProject.company }}</h2>
+      </div>
+      <div class="card">
+        <h2 class="project-title">{{ currentProject.client }}</h2>
+      </div>
+      <div class="card">
+        <h3 *ngIf="currentProject.task">{{ currentProject.task }}</h3>
+        <ul class="project-task-list" *ngIf="currentProject.detailsTask">
+          <li *ngFor="let detail of currentProject.detailsTask" class="project-task">{{ detail }}</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 *ngIf="currentProject.tech">{{ currentProject.tech }}</h3>
+        <ul class="project-task-list" *ngIf="currentProject.detailsTech">
+          <li *ngFor="let detail of currentProject.detailsTech" class="project-task">{{ detail }}</li>
+        </ul>
+      </div>
+      <div *ngIf="isSmallScreen" (click)="nextProject()" class="card-next">
+        <h2 class="project-title">NEXT PROJECT -></h2>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="finder">
+
+  <div class="component-search" *ngIf="!searchResult">
+    <app-aboutme></app-aboutme>
+  </div>
+
+  <div class="component-search" *ngIf="searchResult">
+    <ng-container *ngComponentOutlet="searchResult"></ng-container>
+  </div>
+
+  <!-- Desactivated 
+  <div *ngIf="!searchResult && searchQuery">
+    <p>No results found for "{{ searchQuery }}"</p>
+  </div> -->
+
+  <!-- Desactivated 
+  <div *ngIf="!needHelp && !isSmallScreen" class="finder-wrapper-input">
+    <input [(ngModel)]="searchQuery" (keydown.enter)="onKeydown($event)" class="finder-input" type="text"
+      placeholder="Type anything you want to know about me (e.g., 'stack', 'projects', 'about me', 'contact')." />
+    <div class="dot" (click)="onSearch()">
+      <img class="dot-img" src="happy.png" />
+    </div>
+  </div> -->
+
+  <div class="finder-wrapper-buttons">
+    <button (click)="onButtonSearch('projects')" class="hub-button">Projects</button>
+    <button (click)="onButtonSearch('stack')" class="hub-button">Stack</button>
+    <button (click)="onButtonSearch('about me')" class="hub-button">About me</button>
+    <button (click)="onButtonSearch('contact')" class="hub-button">Contact</button>
+  </div>
+
+  <!-- Desactivated 
+  <div *ngIf="!isSmallScreen" class="help">
+    <p *ngIf="!needHelp" (click)="needHelp = true">Do you need help?</p>
+    <p *ngIf="needHelp" (click)="needHelp = false">Back to search bar</p>
+  </div>-->
+</div>
