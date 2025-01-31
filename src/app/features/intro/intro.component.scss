@@ -1,14 +1,15 @@
 section {
-  cursor: context-menu;
   display: grid;
   place-items: center;
-  height: 96vh;
 }
 
 .intro-text {
-  font-size: 24px;
+  font-size: 29px;
   color: #ffffff;
   font-weight: 400;
+  opacity: 0;
+  visibility: hidden;
+  animation: appear 1s ease-in-out forwards;
 }
 
 .intro-div {
@@ -23,6 +24,17 @@ section {
   background-size: 200% 200%;
   background-clip: text;
   color: transparent;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 @keyframes disappear {

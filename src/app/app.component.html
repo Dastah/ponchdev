@@ -1,14 +1,15 @@
-<router-outlet></router-outlet>
+<router-outlet *ngIf="isLoaded"></router-outlet>
 
-<div *ngIf="showIntro">
-  <app-intro></app-intro>
-</div>
-
-<div *ngIf="!showIntro">
-  <section class="banner-section">
-    <app-banner></app-banner>
-  </section>
-  <section class="finder-section">
-    <app-finder></app-finder>
-  </section>
+<div class="content">
+  <div *ngIf="showIntro">
+    <app-intro></app-intro>
+  </div>
+  <div class="parent" *ngIf="!showIntro && isLoaded">
+    <div class="banner-section div1">
+      <app-banner></app-banner>
+    </div>
+    <div class="finder-section div2">
+      <app-finder></app-finder>
+    </div>
+  </div>
 </div>

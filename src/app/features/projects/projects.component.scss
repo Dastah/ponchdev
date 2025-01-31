@@ -1,11 +1,93 @@
-$blue: #00d9ff;
+$green: color(display-p3 0 0.92 0.67);
 
 .project-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
   opacity: 0;
   animation: intro 1s forwards;
+}
+
+.div1 {
+  grid-column: span 3 / span 3;
+  grid-row: span 5 / span 5;
+  border: 1px dashed rgba(255, 255, 255, 0.168627451);
+  background-color: rgba(149, 149, 149, 0);
+  border-radius: 10px;
+  height: 540px;
+}
+
+.div2 {
+  grid-column: span 2 / span 2;
+  grid-row: span 5 / span 5;
+  grid-column-start: 4;
+  cursor: pointer;
+  border: 1px dashed rgba(255, 255, 255, 0.168627451);
+  background-color: rgb(149 149 149 / 0%);
+  border-radius: 10px;
+  position: relative;
+  transition: transform 0.3s ease, background 0.3s ease;
+  animation: moveLeft 3s ease;
+  animation-delay: 1s;
+  height: 540px;
+  z-index: 1;
+}
+
+.div2:hover {
+  background: linear-gradient(to right, rgb(0 0 0 / 50%) 0%, rgb(0 0 0) 0%);
+  transform: translate(-80px, 0px);
+}
+
+.div2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgb(0 0 0 / 50%) 0%, rgb(0 0 0) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.div2:active {
+  transform: translate(-150px, 0px);
+}
+
+.card {
+  padding-inline: 2rem;
+  width: 100%;
+  text-align: left;
+  color: #fff;
+}
+
+.card-title {
+  padding: 1rem;
+  padding-inline: 2rem;
+  width: 100%;
+  text-align: left;
+  color: #fff;
+}
+
+.card-title h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: $green;
+  font-family: "Orbitron", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: $green;
+  font-family: "Orbitron", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .container-projects {
@@ -13,164 +95,51 @@ $blue: #00d9ff;
 }
 
 .project-title {
-  text-shadow: 3px 3px 0px black;
   display: ruby;
   font-size: 1.8rem;
-  width: 100%;
-  text-align: left;
-  font-weight: 500;
-  color: $blue;
+  font-family: "Orbitron", serif;
+  margin-block: 16px;
+  color: color(display-p3 0 0.92 0.67);
 }
 
 .cards-container {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
 }
 
-.card {
-  box-shadow: 0px 0px 15px 0px #ffffff4f;
-  background-color: rgb(0 0 0 / 38%);
-  border-radius: 10px;
-  padding: 1.5rem;
-  padding-inline: 2rem;
-  width: 100%;
-  max-width: 40%;
-  text-align: left;
-  color: #fff;
-  cursor: context-menu;
-  transition: 0.2s;
+.div-company {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.card:hover {
-  box-shadow: 0px 0px 20px 0px $blue;
-  transition: 0.2s;
+.company {
+  width: 21px;
+  margin-left: 2px;
 }
 
-.card-next {
-  box-shadow: 0px 0px 15px 0px $blue;
-  background-color: rgb(0 0 0 / 38%);
-  border-radius: 10px;
-  padding: 1rem;
-  padding-inline: 2rem;
-  width: 100%;
-  max-width: 80%;
-  text-align: center;
-  color: #fff;
-  transition: 0.2s;
-}
-
-.card h3 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-  color: $blue;
+li::marker {
+  color: $green;
 }
 
 .project-task-list,
 .project-tools-list {
-  list-style: none;
+  list-style-position: inside;
+  list-style-type: disclosure-closed;
   padding: 0;
-  font-size: 19px;
 }
 
 .project-task {
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
-
-.slider-btn {
-  position: absolute;
-  top: 60%;
-  border: none;
-  background: none;
-  transform: translateY(-50%);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  z-index: 10;
+  line-height: 2;
+  font-size: 17px;
 }
 
 .center {
   text-align: center;
 }
 
-.arrow {
-  cursor: pointer;
-  height: 120px;
-  left: 50%;
-  position: absolute;
-  top: 62%;
-  transform: translateX(-50%) translateY(-50%);
-  transition: transform 0.1s;
-  width: 80px;
-
-  $transition-time: 0.15s;
-
-  &-top,
-  &-bottom {
-    background-color: #666;
-    height: 4px;
-    left: -5px;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-
-    &:after {
-      background-color: $blue;
-      content: "";
-      height: 100%;
-      position: absolute;
-      top: 0;
-      transition: all $transition-time;
-    }
-  }
-
-  &-top {
-    transform: rotate(45deg);
-    transform-origin: bottom right;
-
-    &:after {
-      left: 100%;
-      right: 0;
-      transition-delay: 0s;
-    }
-  }
-
-  &-bottom {
-    transform: rotate(-45deg);
-    transform-origin: top right;
-
-    &:after {
-      left: 0;
-      right: 100%;
-      transition-delay: $transition-time;
-    }
-  }
-
-  &:hover & {
-    &-top:after {
-      left: 0;
-      transition-delay: $transition-time;
-    }
-
-    &-bottom:after {
-      right: 0;
-      transition-delay: 0s;
-    }
-  }
-
-  &:active {
-    transform: translateX(-50%) translateY(-50%) scale(0.9);
-  }
-}
-
-.next-btn {
-  right: 18%;
+.white {
+  color: #fff;
+  margin-left: 10px;
 }
 
 @keyframes intro {
@@ -182,25 +151,122 @@ $blue: #00d9ff;
   }
 }
 
-@media (min-width: 0px) and (max-width: 992px) {
+@keyframes moveLeft {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(-60px, 0px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  75% {
+    transform: translate(-60px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(0px, -60px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  75% {
+    transform: translate(0px, -60px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@media (max-width: 1026px) {
+  .project-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+
+  .div1 {
+    grid-column: 1;
+    grid-row: 1;
+    height: auto;
+  }
+
+  .div2 {
+    grid-column: 1;
+    grid-row: 2;
+    transform: none;
+    animation: none;
+    height: auto;
+    animation: moveUp 3s ease;
+    animation-delay: 2s;
+    z-index: 1;
+  }
+
+  .div2:hover {
+    transform: none;
+  }
+
+  .div2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgb(0, 0, 0) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .container-projects {
     width: 90%;
   }
-  .card {
-    box-shadow: 0px 0px 15px 0px rgba(255, 255, 255, 0.3098039216);
-    background-color: rgba(0, 0, 0, 0.38);
-    border-radius: 10px;
-    padding: 1.5rem;
-    padding-inline: 2rem;
-    width: 100%;
-    max-width: 80%;
-    text-align: left;
-    color: #fff;
-    cursor: context-menu;
-    transition: 0.2s;
+
+  .project-title {
+    font-size: 1.5rem;
   }
+
+  .card-title h3,
+  .card h3 {
+    font-size: 1.3rem;
+  }
+
   .cards-container {
     flex-direction: column;
-    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  .card-title h3,
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-task {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .project-task {
+    line-height: 3;
+    font-size: 12px;
   }
 }

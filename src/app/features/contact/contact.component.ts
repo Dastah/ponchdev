@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class ContactComponent {
   show = false;
-  sending = false;
   sent = false;
 
   constructor() {}
@@ -46,7 +45,6 @@ export class ContactComponent {
       alert('Invalid email format.');
       return;
     }
-    this.sending = true;
     event.preventDefault();
     const form = event.target as HTMLFormElement;
     const statusMessage = document.getElementById(
@@ -64,19 +62,23 @@ export class ContactComponent {
     })
       .then((response) => {
         if (response.ok) {
-          setTimeout(() => {
-            this.sending = false;
-            this.sent = true;
-          }, 2000);
-          setTimeout(() => {
-            form.reset();
-            this.downloadCv();
-          }, 2000);
+          this.sent = true;
+          form.reset();
         } else {
           throw new Error('Error en el envío del formulario');
         }
       })
       .catch(() => {});
+  }
+
+  sendEmail(to: string, subject: string, body: string): void {
+    const encodedTo = encodeURIComponent(to);
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(body);
+
+    const mailtoLink = `mailto:${encodedTo}?subject=${encodedSubject}&body=${encodedBody}`;
+
+    window.location.href = mailtoLink;
   }
 
   downloadCv(): void {

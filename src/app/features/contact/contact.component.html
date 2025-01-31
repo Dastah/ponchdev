@@ -1,8 +1,7 @@
 <div *ngIf="show" class="contact-section">
-    <div class="contact-container">
-        <form #contactForm="ngForm" (submit)="sendForm($event)" novalidate>
-            <h1>Let's get in touch!</h1>
-            <p class="cv-info"><i>Send this form to download my CV</i></p>
+    <div class="div1">
+        <form class="block" #contactForm="ngForm" (submit)="sendForm($event)" novalidate>
+            <h1>Send this form</h1>
             <div class="row">
                 <div class="col-25">
                     <label for="fname">Name</label>
@@ -30,19 +29,27 @@
                         #subject="ngModel" required style="height:200px"></textarea>
                 </div>
             </div>
-            <div *ngIf="!sending && !sent" class="row row-button">
+            <div *ngIf="!sent" class="row row-button">
                 <button [disabled]="contactForm.invalid" type="submit">Send</button>
             </div>
-            <div *ngIf="sending" class="container">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-            <div *ngIf="sent && !sending">
-                <img class="checkmark" src="check.webp" alt="">
+            <div *ngIf="sent" class="row row-button sent">
+                <button type="button">Sent</button>
             </div>
         </form>
-
+    </div>
+    <div class="div2">OR</div>
+    <div class="div3">
+        <div class="block">
+            <h1>Push to talk</h1>
+            <div (click)="sendEmail(
+                'alfonsomlwork@gmail.com',
+                'Helloooooo',
+                'Gonna pay you one million dollars for your work'
+              )" class="talk-button">
+                <span class="ready">Ready?</span>
+                <span class="go">GO</span>
+            </div>
+            <span class="mailto">alfonsomlwork&#64;gmail.com</span>
+        </div>
     </div>
 </div>

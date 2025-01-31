@@ -1,24 +1,22 @@
-<div *ngIf="show" class="container-aboutme">
-  <img class="aboutmepic" src="profile.webp" />
-  <div class="text-container">
-    <p class="text-p">
-      Based in Barcelona, I’m {{ age }} years old with <b class="shine">{{ experience }} years</b> of
-      experience creating dynamic, functional, and visually appealing web
-      interfaces.
-      <br />
-      <br />
-      Throughout my career, I’ve worked on projects ranging from complex
-      enterprise applications to seamless user experiences, always focusing on
-      writing clean and scalable code.
-      <br />
-      <br />
-      If you’re looking for a dedicated developer passionate about delivering
-      high-quality solutions, I’m here to help,
-      <b
-      (click)="goContact('alfonsomlwork@gmail.com', 'Lets talk!', '')"
-        class="contact-aboutme"
-        >contact me!
-      </b>
-    </p>
+<div *ngIf="show" class="container-aboutme parent">
+  <div class="div1">
+    <img class="aboutmepic" src="profile.webp" loading="lazy"/>
+  </div>
+  <div class="div2">
+    <div class="text-container">
+      <p class="text-p">
+        I’m {{ age }} years old with <span class="white">{{ experience }} years of experience</span> based in Barcelona,
+        creating dynamic, functional, and visually appealing web interfaces.
+        <br />
+        <br />
+        Throughout my career, I’ve worked on projects ranging from <span class="white">complex enterprise
+          applications</span> to seamless user experiences, always focusing on writing <span
+          class="white">clean and scalable code</span>.
+        <br />
+        <br />
+        If you’re looking for a developer passionate about delivering <span class="white">high-quality solutions</span>,
+        I’m here to help. Don't hesitate to <span class="white">contact me!</span>
+      </p>
+    </div>
   </div>
 </div>

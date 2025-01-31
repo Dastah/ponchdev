@@ -1,3 +1,24 @@
 .banner-section {
-  margin-block: 50px;
+  margin-block: 15px;
+}
+
+.content{
+  height: 98vh;
+  align-content: center;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+  
+.div1 {
+  grid-column: span 5 / span 5;
+}
+
+.div2 {
+  grid-column: span 5 / span 5;
+  grid-row: span 3 / span 3;
+  grid-row-start: 2;
 }

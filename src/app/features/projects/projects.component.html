@@ -1,32 +1,49 @@
 <div *ngIf="show" class="project-section">
-  <div class="container-projects">
-    <button *ngIf="!isSmallScreen" class="slider-btn next-btn" (click)="nextProject()">
-      <div class="arrow">
-        <div class="arrow-top"></div>
-        <div class="arrow-bottom"></div>
+  <div *ngIf="projects[currentIndex]" class="div1">
+    <div class="card-title">
+      <div class="div-company">
+        <h3 class="project-title">
+          COMPANY:<span class="white">{{ currentProject.company }}</span>
+        </h3>
+        <img class="company" src="accenture.png" alt=""><br><br>
       </div>
-    </button>
-    <div (click)="nextProject()" *ngIf="currentProject" class="cards-container" #cardsContainer>
+      <h3 class="project-title">
+        CLIENT:<span class="white">{{ currentProject.client }}</span>
+      </h3>
+    </div>
+    <div class="cards-container" #cardsContainer>
       <div class="card">
-        <h2 class="project-title">{{ currentProject.company }}</h2>
-      </div>
-      <div class="card">
-        <h2 class="project-title">{{ currentProject.client }}</h2>
-      </div>
-      <div class="card">
-        <h3 *ngIf="currentProject.task">{{ currentProject.task }}</h3>
+        <h3>Task</h3>
         <ul class="project-task-list" *ngIf="currentProject.detailsTask">
           <li *ngFor="let detail of currentProject.detailsTask" class="project-task">{{ detail }}</li>
         </ul>
       </div>
       <div class="card">
-        <h3 *ngIf="currentProject.tech">{{ currentProject.tech }}</h3>
+        <h3>Tech</h3>
         <ul class="project-task-list" *ngIf="currentProject.detailsTech">
           <li *ngFor="let detail of currentProject.detailsTech" class="project-task">{{ detail }}</li>
         </ul>
       </div>
-      <div *ngIf="isSmallScreen" (click)="nextProject()" class="card-next">
-        <h2 class="project-title">NEXT PROJECT -></h2>
+    </div>
+  </div>
+  <div *ngIf="projects[nextIndex]" (click)="nextProjects()" class="div2">
+    <div class="card-title">
+      <div class="div-company">
+        <h3 class="project-title">
+          COMPANY:<span class="white">{{ nextProject.company }}</span>
+        </h3>
+        <img class="company" src="accenture.png" alt=""><br><br>
+      </div>
+      <h3 class="project-title">
+        CLIENT:<span class="white">{{ nextProject.client }}</span>
+      </h3>
+    </div>
+    <div class="cards-container" #cardsContainer>
+      <div class="card">
+        <h3>Task</h3>
+        <ul class="project-task-list" *ngIf="nextProject.detailsTask">
+          <li *ngFor="let detail of nextProject.detailsTask" class="project-task">{{ detail }}</li>
+        </ul>
       </div>
     </div>
   </div>

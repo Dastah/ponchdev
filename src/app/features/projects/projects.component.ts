@@ -11,12 +11,12 @@ import { BreakpointObserver } from '@angular/cdk/layout';
   styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent {
-  @ViewChild('cardsContainer', { static: false }) cardsContainer!: ElementRef;
-
-  projects = projects;
-  currentIndex: number = 0;
-  currentProject = this.projects[this.currentIndex];
   show = false;
+  projects = projects;
+  currentIndex = 0;
+  nextIndex = 1;
+  currentProject = this.projects[this.currentIndex];
+  nextProject = this.projects[this.nextIndex];
   isSmallScreen: boolean = false;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
@@ -32,22 +32,21 @@ export class ProjectsComponent {
       });
   }
 
-  nextProject() {
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
-    } else {
-      this.currentIndex = this.projects.length - 1;
-    }
-    this.updateCurrentProject();
-    if (this.isSmallScreen) {
-      window.scrollTo({
-        top: 580,
-        behavior: 'smooth',
-      });
-    }
+  nextProjects() {
+    this.currentIndex =
+      this.currentIndex > 0 ? this.currentIndex - 1 : this.projects.length - 1;
+
+    this.nextIndex = (this.currentIndex + 1) % this.projects.length;
+
+    this.updateProjects();
   }
 
-  updateCurrentProject() {
+  updateProjects() {
     this.currentProject = this.projects[this.currentIndex];
+    this.nextProject = this.projects[this.nextIndex];
+
+    if (this.isSmallScreen) {
+      window.scrollTo({ top: 440, behavior: 'smooth' });
+    }
   }
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-aboutme',
@@ -10,24 +10,18 @@ import { Component, OnInit } from '@angular/core';
 export class AboutmeComponent implements OnInit {
   birthDate: Date = new Date('1996-10-29');
   experienceStartDate: Date = new Date('2021-01-01');
-
   age: number = 0;
   experience: number = 0;
   show = false;
 
+  constructor(private el: ElementRef) {}
+
   ngOnInit(): void {
-    this.calculateAge();
-    this.calculateExperience();
     setTimeout(() => {
       this.show = true;
     }, 10);
-  }
-
-  goContact(email: string, subject: string, body: string): void {
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailtoLink;
+    this.calculateAge();
+    this.calculateExperience();
   }
 
   calculateAge(): void {
