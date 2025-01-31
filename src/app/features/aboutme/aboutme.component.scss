@@ -32,7 +32,7 @@ $green: color(display-p3 0 0.92 0.67);
 }
 
 .aboutmepic {
-  width: 479px;
+  width: 85%;
   border-radius: 10px;
   filter: opacity(0.8);
   background: -webkit-linear-gradient(
@@ -45,7 +45,7 @@ $green: color(display-p3 0 0.92 0.67);
 
 .text-container {
   width: 750px;
-  font-size: 28px;
+  font-size: 1.3vw;
   text-align: -webkit-left;
   text-align: left;
 }
@@ -111,7 +111,7 @@ $green: color(display-p3 0 0.92 0.67);
   }
 
   .aboutmepic {
-    width: 90%;
+    width: 85%;
   }
 
   .text-container {
@@ -127,7 +127,7 @@ $green: color(display-p3 0 0.92 0.67);
 
 @media (max-width: 480px) {
   .aboutmepic {
-    width: 90%;
+    width: 85%;
   }
   .text-container {
     text-align: webkit-center;
@@ -147,7 +147,7 @@ $green: color(display-p3 0 0.92 0.67);
     text-align: left;
   }
   .aboutmepic {
-    width: 100%;
+    width: 85%;
   }
   .text-container p {
     padding: 30px;

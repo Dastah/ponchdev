@@ -33,12 +33,15 @@ export class ProjectsComponent {
   }
 
   nextProjects() {
-    this.currentIndex =
-      this.currentIndex > 0 ? this.currentIndex - 1 : this.projects.length - 1;
-
+    // Incrementa el índice actual
+    this.currentIndex = (this.currentIndex + 1) % this.projects.length;
+  
+    // El siguiente índice es el siguiente al actual
     this.nextIndex = (this.currentIndex + 1) % this.projects.length;
-
-    this.updateProjects();
+  
+    console.log(this.currentIndex, this.nextIndex); // Depuración para ver los índices
+  
+    this.updateProjects(); // Llamada para actualizar la vista o lógica
   }
 
   updateProjects() {

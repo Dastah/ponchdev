@@ -15,7 +15,7 @@ $green: color(display-p3 0 0.92 0.67);
   border: 1px dashed rgba(255, 255, 255, 0.168627451);
   background-color: rgba(149, 149, 149, 0);
   border-radius: 10px;
-  height: 540px;
+  height: auto;
 }
 
 .div2 {
@@ -30,7 +30,7 @@ $green: color(display-p3 0 0.92 0.67);
   transition: transform 0.3s ease, background 0.3s ease;
   animation: moveLeft 3s ease;
   animation-delay: 1s;
-  height: 540px;
+  height: auto;
   z-index: 1;
 }
 
@@ -241,7 +241,7 @@ li::marker {
 
   .card-title h3,
   .card h3 {
-    font-size: 1.3rem;
+    font-size: 4vw;
   }
 
   .cards-container {
@@ -256,7 +256,7 @@ li::marker {
 
   .card-title h3,
   .card h3 {
-    font-size: 1.1rem;
+    font-size: 4vw;;
   }
 
   .project-task {
@@ -266,7 +266,7 @@ li::marker {
 
 @media (max-width: 1440px) {
   .project-task {
-    line-height: 3;
+    line-height: 2;
     font-size: 12px;
   }
 }
