@@ -173,7 +173,7 @@ textarea:focus {
 
 .col-25 {
   float: left;
-  width: 18%;
+  width: 24%;
   margin-top: 6px;
   font-size: 18px;
 }
@@ -383,7 +383,7 @@ textarea {
 }
 
 /* Phone & Pad */
-@media (max-width: 1026px) {
+@media (max-width: 1300px) {
   .contact-section {
     display: flex;
     flex-direction: column;
