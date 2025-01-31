@@ -54,3 +54,14 @@ section {
     opacity: 0;
   }
 }
+
+@media (max-width: 768px) {
+  .intro-text {
+    font-size: 19px;
+    color: #ffffff;
+    font-weight: 400;
+    opacity: 0;
+    visibility: hidden;
+    animation: appear 1s ease-in-out forwards;
+  }
+}
