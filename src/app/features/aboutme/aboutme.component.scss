@@ -153,3 +153,12 @@ $green: color(display-p3 0 0.92 0.67);
     padding: 30px;
   }
 }
+
+@media (min-width: 1440px) {
+  .text-container {
+    width: 100%;
+    font-size: 26px;
+    text-align: -webkit-left;
+    text-align: left;
+  }
+}

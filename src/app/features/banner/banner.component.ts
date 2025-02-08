@@ -39,6 +39,15 @@ export class BannerComponent implements AfterViewInit {
     }
   }
 
+  downloadCV(): void {
+    const link = document.createElement('a');
+    link.href = 'CV/alfonsoml-cv-2025.docx.pdf'; 
+    link.download = 'alfonsoml-cv-2025.docx.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   private initThree(): void {
     const container = document.getElementById('coffee-canvas');
     if (!container) {
